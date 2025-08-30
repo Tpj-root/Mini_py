@@ -1,0 +1,22 @@
+1464970
+29/05/2008
+
+
+
+curl 'https://tnresults.nic.in/rdtpex.asp' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:138.0) Gecko/20100101 Firefox/138.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Origin: https://tnresults.nic.in' -H 'Connection: keep-alive' -H 'Referer: https://tnresults.nic.in/rdtpex.htm' -H 'Cookie: ASPSESSIONIDCCBABBQQ=KIAACIMAMCIHPCCGGIFIHCAN; ASPSESSIONIDSCCDCCSB=GPOGLFMAHNOBFALDIMDDCOFO; ASPSESSIONIDAASATBTT=NLEMFCMAKADOEEGNOKIJAOBK; ASPSESSIONIDSQTQQSDT=PICPFCMAAAIGGEPKHMPELFED' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: same-origin' -H 'Sec-Fetch-User: ?1' -H 'Priority: u=0, i' --data-raw 'regno=1464970&dob=29%2F05%2F2008&B1=Get+Marks'
+
+
+
+
+1464969
+XX/XX/2008
+
+i dont knowt the dob possibity is 365 days if same year 2008 
+
+2007 2008 2009
+
+
+
+
+
+

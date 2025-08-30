@@ -1,0 +1,7 @@
+start   29_05_2008_1464970
+
+
+for month in $(seq -w 6 12); do
+
+
+

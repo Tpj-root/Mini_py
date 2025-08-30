@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Custom Icons with Colored Circles</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { height: 1000px; }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([10.800629, 78.689921], 19);
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define multiple custom icons
+    var bikeIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/hardware/cast/materialicons/24px.svg',  // URL to bike icon
+        iconSize: [32, 32], // Size of the icon
+        iconAnchor: [16, 32], // Bottom center anchor point
+        popupAnchor: [0, -32] // Popup offset
+    });
+
+    var carIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/alert/add_alert/materialicons/24px.svg',  // URL to car icon
+        iconSize: [32, 32], // Size of the icon
+        iconAnchor: [16, 32], // Bottom center anchor point
+        popupAnchor: [0, -32] // Popup offset
+    });
+
+    var truckIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/hardware/gamepad/materialicons/24px.svg',  // URL to truck icon
+        iconSize: [40, 40], // Size of the icon
+        iconAnchor: [20, 40], // Bottom center anchor point
+        popupAnchor: [0, -40] // Popup offset
+    });
+
+    // Define multiple custom icons
+    var User_0 = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/hardware/cast/materialicons/24px.svg',  // URL to bike icon
+        iconSize: [32, 32], // Size of the icon
+        iconAnchor: [16, 32], // Bottom center anchor point
+        popupAnchor: [0, -32] // Popup offset
+    });
+
+
+    // Add markers with custom icons and colored circles
+    L.circle([10.803957, 78.686576], {
+        color: 'blue',        // Border color
+        fillColor: 'lightblue', // Fill color
+        fillOpacity: 0.5,
+        radius: 20 // Adjust size
+    }).addTo(map);
+
+    L.marker([10.803957, 78.686576], { icon: bikeIcon }).addTo(map)
+    .bindPopup("<b>Bike Location</b><br>Name: SSSSYYY");
+
+
+//-----------------------------------------------------------------------------------//
+
+
+
+//Rectangle /Square User_0
+
+    L.rectangle([
+        [10.813993, 78.683747],  // Bottom-left corner
+        [10.814993, 78.689747],   // Top-right corner
+    ], {
+        color: "blue",
+        fillColor: "lightblue",
+        fillOpacity: 0.5
+    }).addTo(map);
+
+    L.marker([10.813993, 78.683747], { icon: User_0 }).addTo(map)
+        .bindPopup("<b>Car Location</b><br>Name: SAAAII");
+
+//-----------------------------------------------------------------------------------//
+
+
+
+//    L.circle([10.775159, 78.686096], {
+//        color: 'red',
+//        fillColor: 'pink',
+//        fillOpacity: 0.5,
+//        radius: 20
+//    }).addTo(map);
+//
+//    L.marker([10.775159, 78.686096], { icon: carIcon }).addTo(map)
+//        .bindPopup("<b>Car Location</b><br>Name: SAAAII");
+
+
+
+
+L.polygon([
+    [10.775, 78.686],
+    [10.776, 78.687],
+    [10.777, 78.6865],
+    [10.777, 78.6855],
+    [10.776, 78.685],
+    [10.775, 78.6855]
+    ], {
+        color: "orange",
+        fillColor: "yellow",
+        fillOpacity: 0.5
+    }).addTo(map);
+
+// old style 
+//L.marker([10.775159, 78.686096], { icon: carIcon }).addTo(map)
+//.bindPopup("<b>Car Location</b><br>Name: SAAAII");
+
+
+//  This will always display the text near the marker without requiring a popup. Adjust iconSize and CSS as needed.
+
+const carLabel = L.divIcon({
+    className: 'car-label',
+    html: '<b>Car Location</b><br>Name: SAAAII',
+    iconSize: [100, 40] // Adjust size as needed
+});
+
+L.marker([10.775159, 78.686096], { icon: carIcon }).addTo(map);
+L.marker([10.775159, 78.686096], { icon: carLabel }).addTo(map);
+
+
+
+
+
+
+
+
+// user 3
+L.circle([10.777878, 78.671245], {
+    color: 'green',
+    fillColor: 'lightgreen',
+    fillOpacity: 0.5,
+    radius: 30
+}).addTo(map);
+
+// Update version 
+//    L.marker([10.777878, 78.671245], { icon: truckIcon }).addTo(map)
+//    .bindPopup("<b>Truck Location</b><br>Name: KKKK<br>Sex: M<br>Another Line<br>More Info Here");
+//
+// update hyperlink sample
+L.marker([10.777878, 78.671245], { icon: truckIcon }).addTo(map)
+.bindPopup(`
+    <b>Truck Location</b><br>
+    Name: KKKK<br>
+    Sex: M<br>
+    Another Line<br>
+    More Info Here<br>
+    <a href="https://example.com" target="_blank">Visit Website</a>
+    `);
+
+// 
+    // Define road coordinates (latitude, longitude)
+    var roadCoordinates = [
+        [10.826364, 78.697155],  // Start point
+        [10.825387, 78.697104],  // Midpoint
+        [10.824186, 78.697110]   // Endpoint
+    ];
+    
+    // Create polyline (road) with custom color
+    L.polyline(roadCoordinates, {
+        color: 'red',   // Road color
+        weight: 5,      // Line thickness
+        opacity: 0.7,   // Transparency
+    }).addTo(map);
+
+
+    // Define road coordinates (latitude, longitude)
+    var roadCoordinates = [
+        [10.826364, 78.697155],  // Start point
+        [10.825387, 78.697104],  // Midpoint
+        [10.824186, 78.697110]   // Endpoint
+    ];
+    
+    // Create polyline (road) with custom color
+    L.polyline(roadCoordinates, {
+        color: 'Green',   // Road color
+        weight: 15,      // Line thickness
+        opacity: 0.5,   // Transparency
+    }).addTo(map);
+
+// icon will move smoothly 
+    // Define road coordinates (latitude, longitude)
+    var roadCoordinates = [
+        [10.809237, 78.695894],  // Start point
+        [10.809063, 78.695304],  
+        [10.808831, 78.694655],  
+        [10.808810, 78.693717],  
+        [10.808810, 78.693717],  
+        [10.808805, 78.691061]   // Endpoint
+    ];
+    
+
+    // Create the polyline (road)
+    L.polyline(roadCoordinates, {
+        color: 'red',
+        weight: 5,
+        opacity: 0.7
+    }).addTo(map);
+    
+    // Define moving icon
+    var User_0 = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/hardware/cast/materialicons/24px.svg',  
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+    
+    // Add moving marker to the map
+    var marker = L.marker(roadCoordinates[0], { icon: User_0 }).addTo(map);
+    
+    //  jumping effect
+    // Function to move marker along the road
+//    function moveMarker(marker, coords, speed) {
+//        let index = 0;
+//        function animate() {
+//            if (index < coords.length) {
+//                marker.setLatLng(coords[index]);
+//                index++;
+//                setTimeout(animate, speed); // Adjust speed (milliseconds)
+//            }
+//        }
+//        animate();
+//    }
+//    // If You Want Smoother Movement:
+//    // Start moving the marker
+//    moveMarker(marker, roadCoordinates, 1000);  // Moves every 500ms
+
+    function moveMarkerSmoothly(marker, coords, speed, steps) {
+        let index = 0;
+        
+        function interpolate(lat1, lon1, lat2, lon2, factor) {
+            return [
+                lat1 + (lat2 - lat1) * factor,
+                lon1 + (lon2 - lon1) * factor
+            ];
+        }
+    
+        function animate() {
+            if (index < coords.length - 1) {
+                let [lat1, lon1] = coords[index];
+                let [lat2, lon2] = coords[index + 1];
+                let step = 0;
+    
+                function stepMove() {
+                    if (step <= steps) {
+                        let newPos = interpolate(lat1, lon1, lat2, lon2, step / steps);
+                        marker.setLatLng(newPos);
+                        step++;
+                        setTimeout(stepMove, speed / steps);
+                    } else {
+                        index++;
+                        setTimeout(animate, speed); // Move to next point
+                    }
+                }
+                stepMove();
+            }
+        }
+        animate();
+    }
+    
+    // Start smoothly moving the marker
+    moveMarkerSmoothly(marker, roadCoordinates, 1000, 100);  // 1000ms per point, 50 small steps
+
+
+//
+//  Updated Code with Loop
+//
+    // Define road coordinates (latitude, longitude)
+    var roadCoordinates1 = [
+        [10.835527, 78.688902],  // Start point
+        [10.835087, 78.688502],  
+        [10.834805, 78.688239],  
+        [10.834341, 78.687761],  
+        [10.834341, 78.687761],  
+        [10.833022, 78.686489],
+        [10.832585, 78.686036],
+        [10.832585, 78.686036],
+        [10.831596, 78.685597],
+        [10.827310, 78.685842],
+        [10.827073, 78.685957],
+        [10.826949, 78.689259],
+        [10.826888, 78.690763],
+        [10.826804, 78.692086],
+        [10.826762, 78.692440],
+        [10.826599, 78.693059],
+        [10.826791, 78.693126],
+        [10.827328, 78.693049],
+        [10.827866, 78.693011],
+        [10.829591, 78.692839],
+        [10.831699, 78.693126],
+        [10.834149, 78.691281],
+        [10.835666, 78.689167],
+        [10.835527, 78.688902]// End point
+    ];
+    // Create the polyline (road)
+    L.polyline(roadCoordinates1, {
+        color: 'red',
+        weight: 5,
+        opacity: 0.7
+    }).addTo(map);
+    
+    // Define moving icon
+    var User_0 = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/hardware/cast/materialicons/24px.svg',  
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+    
+    // Add moving marker to the map
+    var marker = L.marker(roadCoordinates1[0], { icon: User_0 }).addTo(map);
+    
+
+    function moveMarkerSmoothlyLoop(marker, coords, speed, steps, loopCount) {
+        let index = 0;
+        let count = 0;
+    
+        function interpolate(lat1, lon1, lat2, lon2, factor) {
+            return [
+                lat1 + (lat2 - lat1) * factor,
+                lon1 + (lon2 - lon1) * factor
+            ];
+        }
+    
+        function animate() {
+            if (index < coords.length - 1) {
+                let [lat1, lon1] = coords[index];
+                let [lat2, lon2] = coords[index + 1];
+                let step = 0;
+    
+                function stepMove() {
+                    if (step <= steps) {
+                        let newPos = interpolate(lat1, lon1, lat2, lon2, step / steps);
+                        marker.setLatLng(newPos);
+                        step++;
+                        setTimeout(stepMove, speed / steps);
+                    } else {
+                        index++;
+                        setTimeout(animate, speed); // Move to next point
+                    }
+                }
+                stepMove();
+            } else {
+                count++; // Increment loop count
+                if (count < loopCount) {
+                    index = 0; // Restart movement from the beginning
+                    setTimeout(animate, speed);
+                }
+            }
+        }
+        animate();
+    }
+    
+    // Start moving smoothly with loop (5 times)
+    moveMarkerSmoothlyLoop(marker, roadCoordinates1, 1000, 50, 5);
+
+     // FIX ME  
+    //moveMarkerSmoothlyLoop(marker, roadCoordinates, 1000, 50, 5);
+
+
+</script>
+</body>
+</html>

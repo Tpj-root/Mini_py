@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{luatexbase,luacode}
+\usepackage{tikz}
+\usepackage{animate}
+
+\begin{document}
+
+\begin{animateinline}[autoplay,loop]{10}
+    \multiframe{20}{i=0+1}{
+        \begin{tikzpicture}
+            \fill[red] (\i*0.2, 0) circle (0.2);
+        \end{tikzpicture}
+    }
+\end{animateinline}
+
+\end{document}

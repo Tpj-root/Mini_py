@@ -1,0 +1,4 @@
+REGNO: 1464974 DOB: 31_6_2008 not in the list
+REGNO: 1464975 DOB: 31_6_2008 not in the list
+REGNO: 1464976 DOB: 31_6_2008 not in the list
+REGNO: 1464980 DOB: 31_6_2008 not in the list
